@@ -1,0 +1,37 @@
+.search-copntainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  letter-spacing: 2px;
+  align-items: flex-end;
+}
+.search-copntainer p,
+span {
+  color: #fafafa;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.search-copntainer input {
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #faffd1;
+  min-width: 100px;
+}
+.search-copntainer input[type='date'] {
+  height: 28px;
+}
+.search-copntainer input[type='checkbox'] {
+  min-width: auto;
+}
+.search-copntainer select {
+  min-width: 100px;
+  height: 28px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #faffd1;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
