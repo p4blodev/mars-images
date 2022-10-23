@@ -2,10 +2,11 @@ import { useCallback, useState } from 'react';
 import { Photo, FiltersType } from '../../models/rovers';
 import { getRoverPhotos } from '../../services';
 
-const useGetRoverPhotos = () => {
+export const useGetRoverPhotos = () => {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [searching, setSearching] = useState(false);
   const [filters, setFilters] = useState<FiltersType | null>();
+  const [error, setError] = useState();
 
   const requestData = useCallback(
     (filters: FiltersType) => {
@@ -16,6 +17,9 @@ const useGetRoverPhotos = () => {
       getRoverPhotos(filters)
         .then((response) => {
           setPhotos((prev) => prev.concat(response));
+        })
+        .catch((error) => {
+          setError(error.message);
         })
         .finally(() => {
           setSearching(false);
@@ -40,11 +44,10 @@ const useGetRoverPhotos = () => {
   }, [filters, requestData]);
 
   return {
+    error,
+    nextPage,
     photos,
     searching,
     searchMarsPhotos,
-    nextPage,
   };
 };
-
-export default useGetRoverPhotos;

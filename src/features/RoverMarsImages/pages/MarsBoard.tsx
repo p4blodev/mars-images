@@ -7,7 +7,13 @@ import './MarsBoard.css';
 import { FiltersType } from '../../../models/rovers';
 
 const MarsBoard = (): JSX.Element => {
-  const { photos, searching, nextPage, searchMarsPhotos } = useGetRoverPhotos();
+  const { error, nextPage, photos, searching, searchMarsPhotos } =
+    useGetRoverPhotos();
+
+  console.log(
+    'TURBO-CL -> file: MarsBoard.tsx -> line 11 -> MarsBoard -> error',
+    error,
+  );
 
   const externalRef = useRef<HTMLDivElement>(null);
   const { isNearScreen } = useNearScreen({

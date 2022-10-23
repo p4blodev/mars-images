@@ -1,7 +1,12 @@
 import './Spinner.css';
 
 const Spinner = (): JSX.Element => (
-  <div className="spinner-container">
+  <div
+    aria-atomic="true"
+    aria-live="polite"
+    className="spinner-container"
+    role="status"
+  >
     <div className="spinner" />
   </div>
 );
