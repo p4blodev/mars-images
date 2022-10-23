@@ -10,11 +10,11 @@ afterEach(() => server.resetHandlers());
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 describe('Board page verification', () => {
-  test('01 - should render spinner after user clic searc', () => {
+  test('01 - should render spinner after user clic search', () => {
     render(<MarsBoard />);
     fireEvent.click(screen.getByRole('button', { name: 'Search' }));
 
-    expect(screen.getByRole('status')).toBeInTheDocument();
+    expect(screen.getAllByRole('status')).toHaveLength(2);
   });
   test('02 - should render 5 photos taked for camera "Front Hazard Avoidance Camera"', async () => {
     render(<MarsBoard />);

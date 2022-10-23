@@ -34,6 +34,7 @@ const MarsBoard = (): JSX.Element => {
     <>
       <div style={{ minHeight: '100vh' }}>
         <Filters onFilters={handleFilters} />
+        {searching && <Spinner />}
         {error && <ErrorMessage text={error} />}
         <ListOfPhotos photos={photos} />
       </div>
