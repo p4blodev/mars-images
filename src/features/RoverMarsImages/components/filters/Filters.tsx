@@ -63,8 +63,8 @@ const Search = ({ onFilters }: SearchType) => {
   return (
     <form className="search-copntainer" onSubmit={handleSubmit}>
       <div>
-        <p>Rover</p>
-        <select value={rover.name} onChange={handleRoverChange}>
+        <label htmlFor="rover">Rover</label>
+        <select id="rover" value={rover.name} onChange={handleRoverChange}>
           {rovers.map((current) => {
             return (
               <option value={current} key={current}>
@@ -75,8 +75,8 @@ const Search = ({ onFilters }: SearchType) => {
         </select>
       </div>
       <div>
-        <p>Camera:</p>
-        <select value={camera} onChange={handleCameraChange}>
+        <label htmlFor="camera">Camera</label>
+        <select id="camera" value={camera} onChange={handleCameraChange}>
           {rover.cameras.map((current) => {
             return (
               <option value={current} key={current}>
@@ -93,7 +93,7 @@ const Search = ({ onFilters }: SearchType) => {
             onChange={handleDisableSol}
             checked={!disableSol}
           />
-          <p>Sol:</p>
+          <label>Sol</label>
         </div>
         <input
           disabled={disableSol}
@@ -105,7 +105,7 @@ const Search = ({ onFilters }: SearchType) => {
         />
       </div>
       <div>
-        <p>Date:</p>
+        <label>Date:</label>
         <input type="date" value={earthDate} onChange={handleDateChange} />
       </div>
       <Button type="submit">Search</Button>
