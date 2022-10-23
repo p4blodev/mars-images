@@ -1,6 +1,6 @@
 import { Photo, FiltersType } from '../../models/rovers';
 
-const BASE_URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/`;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const getRoverPhotos = async (
   filters: FiltersType,

@@ -2,7 +2,6 @@
   border: 1px solid #2c5364;
   border-radius: 0.2em;
 }
-
 .photo-container:hover {
   border: 1px solid #346276;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),

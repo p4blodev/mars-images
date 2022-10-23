@@ -1,12 +1,12 @@
 import { Photo } from '../../../../models/rovers';
-import { Photo as CardPhoto } from '../index';
+import { CardImage } from '../index';
 import './ListOfPhotos.css';
 
 const ListOfPhotos = ({ photos }: { photos: Photo[] }) => {
   return (
-    <section className="photos-container">
+    <section className="list-photos-container">
       {photos.map((current: Photo, index: number) => (
-        <CardPhoto
+        <CardImage
           image={current.img_src}
           key={`${current.id}-${index}`}
           earthDate={current.earth_date}

@@ -1,7 +1,7 @@
-import { PhotoType } from './Photo.type';
-import './Photo.css';
+import { PhotoType } from './CardImage.type';
+import './CardImage.css';
 
-const Photo = ({ image, earthDate, cameraName }: PhotoType) => {
+const CardImage = ({ image, earthDate, cameraName }: PhotoType) => {
   return (
     <div className="photo-container">
       <h2>{cameraName}</h2>
@@ -13,4 +13,4 @@ const Photo = ({ image, earthDate, cameraName }: PhotoType) => {
   );
 };
 
-export default Photo;
+export default CardImage;

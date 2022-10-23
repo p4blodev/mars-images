@@ -1,8 +1,9 @@
 import { useCallback, useState } from 'react';
+import { UseGetRoverPhotosType } from './useGetRoverPhotos.types';
 import { Photo, FiltersType } from '../../models/rovers';
 import { getRoverPhotos } from '../../services';
 
-export const useGetRoverPhotos = () => {
+export const useGetRoverPhotos = (): UseGetRoverPhotosType => {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [searching, setSearching] = useState(false);
   const [filters, setFilters] = useState<FiltersType | null>();

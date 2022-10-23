@@ -39,11 +39,6 @@ describe('Filters component verification', () => {
   });
   test('03 - should return camera in filters when user choose one', async () => {
     const onFilters = (val: FiltersType) => {
-      console.log(
-        'TURBO-CL -> file: Filters.test.tsx -> line 44 -> onFilters -> val',
-        val,
-      );
-
       const MOCK_RETURNED_VALUES = {
         rover: 'Curiosity',
         earth_date: '2022-10-20',

@@ -9,6 +9,7 @@ beforeAll(() => server.listen());
 afterAll(() => server.close());
 afterEach(() => server.resetHandlers());
 
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 const A_FILTERS: FiltersType = {
   rover: 'Curiosity',
   earth_date: '2022-01-01',
@@ -42,7 +43,7 @@ describe('useGetRoverPhotos hokk verification', () => {
     });
   });
   describe('Error hook', () => {
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/Curiosity/photos?api_key=aFakeApiKey&rover=Curiosity&earth_date=2022-01-01&page=1`;
+    const url = `${BASE_URL}Curiosity/photos`;
     const FAILED_REQUEST = rest.get(url, (_req, res, ctx) => {
       return res(ctx.status(404), ctx.json('MOCK_ERROR'));
     });

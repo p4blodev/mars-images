@@ -6,9 +6,7 @@
   letter-spacing: 2px;
   align-items: flex-end;
 }
-.search-copntainer p,
-span,
-label {
+.search-copntainer label {
   color: #fafafa;
   font-size: 0.8rem;
   margin-bottom: 0.5rem;

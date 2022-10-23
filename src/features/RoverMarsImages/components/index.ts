@@ -1,3 +1,3 @@
 export * from './listOfPhotos';
-export * from './photo';
+export * from './cardImage';
 export * from './filters';

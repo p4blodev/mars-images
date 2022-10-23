@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import Button from '../../../../ui-components/button/Button';
+import { Button } from '../../../../ui-components';
+import { FilterType } from './Filters.types';
 import { FiltersType } from '../../../../models/rovers';
 import './Filters.css';
 import { MANIFESTS_MOCK, ManifestType } from './Filters.mock';
 
 const rovers = MANIFESTS_MOCK.map((rover) => rover.name);
 
-interface SearchType {
-  onFilters: (filters: FiltersType) => void;
-}
-
-const Search = ({ onFilters }: SearchType) => {
+const Filters = ({ onFilters }: FilterType) => {
   const [rover, setRover] = useState<ManifestType>(MANIFESTS_MOCK[0]);
   const [camera, setCamera] = useState(rover.cameras[0]);
   const [sol, setSol] = useState(1);
@@ -113,4 +110,4 @@ const Search = ({ onFilters }: SearchType) => {
   );
 };
 
-export default Search;
+export default Filters;

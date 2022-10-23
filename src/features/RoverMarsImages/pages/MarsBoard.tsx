@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { Search, ListOfPhotos } from '../components';
-import { Spinner } from '../../../ui-components';
+import { Filters, ListOfPhotos } from '../components';
+import { Spinner, ErrorMessage } from '../../../ui-components';
 import { useGetRoverPhotos, useNearScreen } from '../../../hooks';
 import debounce from 'just-debounce-it';
 import './MarsBoard.css';
@@ -9,11 +9,6 @@ import { FiltersType } from '../../../models/rovers';
 const MarsBoard = (): JSX.Element => {
   const { error, nextPage, photos, searching, searchMarsPhotos } =
     useGetRoverPhotos();
-
-  console.log(
-    'TURBO-CL -> file: MarsBoard.tsx -> line 11 -> MarsBoard -> error',
-    error,
-  );
 
   const externalRef = useRef<HTMLDivElement>(null);
   const { isNearScreen } = useNearScreen({
@@ -38,10 +33,11 @@ const MarsBoard = (): JSX.Element => {
   return (
     <>
       <div style={{ minHeight: '100vh' }}>
-        <Search onFilters={handleFilters} />
+        <Filters onFilters={handleFilters} />
+        {error && <ErrorMessage text={error} />}
         <ListOfPhotos photos={photos} />
       </div>
-      <div className="board-footer" id="observable" ref={externalRef}>
+      <div className="mars-board-footer" id="observable" ref={externalRef}>
         {searching && <Spinner />}
       </div>
     </>
