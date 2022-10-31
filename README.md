@@ -1,8 +1,6 @@
-# Southern Code Challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can see the hosted app [here](https://p4blodev.github.io/southern-challenge/)
 
 ## How to setup your local enviroment
 
@@ -36,14 +34,3 @@ In the project directory, you can run:
 - `test:coverage`: run unit test and generate coverage report
 - `test`: run unit test
 
-
-
-## Test metrics
-
-> **91.25%** Statements 219/240
->
-> **63.04%** Branches 29/46
->
-> **84.9%** Functions 45/53
->
-> **91.57%** Lines 163/178
